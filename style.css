@@ -25,9 +25,10 @@ body{
     justify-content: center;
     align-items: center;
     flex: none;
+    height: 50.8px;
 }
 
-.buttons-container{
+.button-container{
     display: flex;
     flex: 1;
 }
