@@ -65,6 +65,7 @@ body{
 .equal-button{
     flex: 2;
     width: 150px;
+    max-height: 89.6px;
 }
 
 .ac-button{

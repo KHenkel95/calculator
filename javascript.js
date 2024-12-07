@@ -2,7 +2,7 @@ let firstNum = null;
 let secondNum = null;
 let lastButton;
 let tempNum;
-let operator;
+let operator = null;
 let result;
 const display = document.querySelector('.display');
 const buttonContainer = document.querySelector('.button-container');
@@ -24,8 +24,18 @@ buttonContainer.addEventListener('click', (event) => {
             lastButton = 'digit';
             break;
         case 'operand-button':
-            firstNum = tempNum;
-            operator = target.textContent;
+            if(operator !== null){
+                secondNum = tempNum;
+                result = operate(operator, firstNum, secondNum);
+                display.textContent = result;
+                firstNum = result;
+                operator = target.textContent;
+                secondNum = null;
+            }
+            else{
+                firstNum = tempNum;
+                operator = target.textContent;    
+            }
             lastButton = 'operand';
             break;
         case 'equal-button':
@@ -34,6 +44,7 @@ buttonContainer.addEventListener('click', (event) => {
             tempNum = result;
             display.textContent = result;
             lastButton = 'equal';
+            operator = null;
             break;
         case 'ac-button':
             display.textContent = '';
@@ -43,7 +54,6 @@ buttonContainer.addEventListener('click', (event) => {
             lastButton = 'ac';
             break;
     }
-        
 });
 
 function add(firstNum, secondNum){
