@@ -14,7 +14,7 @@ body{
     flex-direction: column;
     gap: 10px;
     border: 1px solid black;
-    width: 480px;
+    width: 410px;
     height: 480px;
     padding: 10px;
 }
@@ -25,7 +25,7 @@ body{
     justify-content: center;
     align-items: center;
     flex: none;
-    height: 50.8px;
+    height: 80px;
 }
 
 .button-container{
@@ -58,9 +58,15 @@ body{
 
 .operand-button{
     flex: 1;
-    width: 210px;
+    width: 150px;
 }
 
 .equal-button{
     flex: 2;
+    width: 150px;
+}
+
+.ac-button{
+    width: 150px;
+    flex: 1;
 }
