@@ -1,5 +1,6 @@
 let firstNum = null;
 let secondNum = null;
+let lastButton;
 let tempNum;
 let operator;
 let result;
@@ -11,40 +12,35 @@ buttonContainer.addEventListener('click', (event) => {
 
     switch(target.className){
         case 'digit-button':
-            if(secondNum === null){
+            if(lastButton === 'operand'){
                 display.textContent = '';
-            }
-            display.textContent += target.textContent;
-            tempNum = Number(display.textContent);
-            break;
-        case 'operand-button':
-            if(display.textContent !== ''){
-                display.textContent = '';
-            }
-            if(firstNum !== null && secondNum === null){
-                secondNum = tempNum;
-                result = operate(operator, firstNum, secondNum);
-                display.textContent = result;
-                firstNum = result;
-                secondNum = null;
+                display.textContent += target.textContent;
+                tempNum = Number(display.textContent);    
             }
             else{
-                firstNum = tempNum;
-                // display.textContent = '';
+                display.textContent += target.textContent;
+                tempNum = Number(display.textContent);    
             }
+            lastButton = 'digit';
+            break;
+        case 'operand-button':
+            firstNum = tempNum;
             operator = target.textContent;
+            lastButton = 'operand';
             break;
         case 'equal-button':
             secondNum = tempNum;
             result = operate(operator, firstNum, secondNum);
             tempNum = result;
             display.textContent = result;
+            lastButton = 'equal';
             break;
         case 'ac-button':
             display.textContent = '';
             tempNum = null;
             firstNum = null;
             secondNum = null;
+            lastButton = 'ac';
             break;
     }
         
