@@ -17,15 +17,19 @@ body{
     width: 410px;
     height: 480px;
     padding: 10px;
+    background-color: rgb(48, 48, 48);
 }
 
 .display{
     border: 1px solid black;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex: none;
     height: 80px;
+    background-color: rgb(144, 168, 144);
+    font-family: 'Courier New', monospace;
+    font-size: 60px;
 }
 
 .button-container{
@@ -71,4 +75,39 @@ body{
 .ac-button{
     width: 150px;
     flex: 1;
+    background-color: rgb(159, 0, 0);
+    color: rgb(205, 205, 205);
+}
+
+.ac-button:hover{
+    background-color: rgb(178, 27, 27);
+}
+
+.ac-button:active{
+    background-color: rgb(135, 2, 2);
+}
+
+.digit-button,
+.operand-button,
+.equal-button,
+.ac-button{
+    font-size: 30px;
+}
+
+.digit-button,
+.operand-button,
+.equal-button{
+    background-color: rgb(191, 188, 188);
+}
+
+.digit-button:hover,
+.operand-button:hover,
+.equal-button:hover{
+    background-color: rgb(208, 206, 206);
+}
+
+.digit-button:active,
+.operand-button:active,
+.equal-button:active{
+    background-color: rgb(160, 159, 159);
 }
