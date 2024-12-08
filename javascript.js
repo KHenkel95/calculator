@@ -35,11 +35,13 @@ buttonContainer.addEventListener('click', (event) => {
                 display.textContent = result;
                 firstNum = result;
                 operator = target.textContent;
+                display.textContent += operator;
                 secondNum = null;
             }
             else{
                 firstNum = tempNum;
-                operator = target.textContent;    
+                operator = target.textContent;
+                display.textContent += operator;    
             }
             lastButton = 'operand';
             break;
@@ -56,6 +58,7 @@ buttonContainer.addEventListener('click', (event) => {
             tempNum = null;
             firstNum = null;
             secondNum = null;
+            operator = null;
             lastButton = 'ac';
             break;
     }
