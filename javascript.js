@@ -29,7 +29,7 @@ buttonContainer.addEventListener('click', (event) => {
             lastButton = 'digit';
             break;
         case 'operand-button':
-            if(operator !== null){
+            if(operator !== null && lastButton !=='operand'){
                 secondNum = tempNum;
                 result = operate(operator, firstNum, secondNum);
                 display.textContent = result;
@@ -39,6 +39,9 @@ buttonContainer.addEventListener('click', (event) => {
                 secondNum = null;
             }
             else{
+                if(lastButton === 'operand'){
+                    display.textContent = display.textContent.slice(0, -1);
+                }
                 firstNum = tempNum;
                 operator = target.textContent;
                 display.textContent += operator;    
