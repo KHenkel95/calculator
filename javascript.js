@@ -7,11 +7,16 @@ let result;
 const display = document.querySelector('.display');
 const buttonContainer = document.querySelector('.button-container');
 
+display.textContent = '0';
+
 buttonContainer.addEventListener('click', (event) => {
     let target = event.target;
 
     switch(target.className){
         case 'digit-button':
+            if(lastButton === undefined || lastButton === 'ac'){
+                display.textContent = '';
+            }
             if(lastButton === 'operand'){
                 display.textContent = '';
                 display.textContent += target.textContent;
@@ -47,7 +52,7 @@ buttonContainer.addEventListener('click', (event) => {
             operator = null;
             break;
         case 'ac-button':
-            display.textContent = '';
+            display.textContent = '0';
             tempNum = null;
             firstNum = null;
             secondNum = null;
