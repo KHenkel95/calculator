@@ -1,4 +1,4 @@
-const divZeroResponse = 'Funny';
+const divZeroResponse = 'Nice try';
 let firstNum = null;
 let secondNum = null;
 let lastButton;
@@ -15,14 +15,16 @@ buttonContainer.addEventListener('click', (event) => {
 
     switch(target.className){
         case 'digit-button':
-            if(lastButton === undefined || lastButton === 'ac' || display.textContent === divZeroResponse){
-                display.textContent = '';
-            }
-            if(lastButton === 'operand'){
+            if(
+                lastButton === undefined || lastButton === 'ac'
+                || lastButton === 'operand'
+                || display.textContent === divZeroResponse
+            ){
                 display.textContent = '';
                 display.textContent += target.textContent;
-                tempNum = Number(display.textContent);    
+                tempNum = Number(display.textContent);
             }
+
             else{
                 display.textContent += target.textContent;
                 tempNum = Number(display.textContent);    
