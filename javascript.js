@@ -1,4 +1,4 @@
-const DIVZERORESPONSE = 'Funny';
+const divZeroResponse = 'Funny';
 let firstNum = null;
 let secondNum = null;
 let lastButton;
@@ -15,7 +15,7 @@ buttonContainer.addEventListener('click', (event) => {
 
     switch(target.className){
         case 'digit-button':
-            if(lastButton === undefined || lastButton === 'ac' || display.textContent === DIVZERORESPONSE){
+            if(lastButton === undefined || lastButton === 'ac' || display.textContent === divZeroResponse){
                 display.textContent = '';
             }
             if(lastButton === 'operand'){
@@ -39,7 +39,7 @@ buttonContainer.addEventListener('click', (event) => {
                 display.textContent += operator;
                 secondNum = null;
             }
-            else if(display.textContent === DIVZERORESPONSE){
+            else if(display.textContent === divZeroResponse){
                 display.textContent = '';
                 break;
             }
@@ -105,7 +105,7 @@ function operate(operator, firstNum, secondNum){
             return roundToThreeDecimals(multiply(firstNum, secondNum));
         case '/':
             if(secondNum === 0){
-                return DIVZERORESPONSE;
+                return divZeroResponse;
             }
             else{
                 return  roundToThreeDecimals(divide(firstNum, secondNum));
