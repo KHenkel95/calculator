@@ -49,6 +49,9 @@ buttonContainer.addEventListener('click', (event) => {
             lastButton = 'operand';
             break;
         case 'equal-button':
+            if(operator === null || lastButton === 'operand'){
+                break;
+            }
             secondNum = tempNum;
             result = operate(operator, firstNum, secondNum);
             tempNum = result;
