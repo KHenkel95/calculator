@@ -83,15 +83,19 @@ function divide(firstNum, secondNum){
     return firstNum / secondNum;
 }
 
+function roundToThreeDecimals(num){
+    return Math.round(num * 1000) / 1000;
+}
+
 function operate(operator, firstNum, secondNum){
     switch(operator){
         case '+':
-            return add(firstNum, secondNum);
+            return roundToThreeDecimals(add(firstNum, secondNum));
         case '-':
-            return subtract(firstNum, secondNum);
+            return roundToThreeDecimals(subtract(firstNum, secondNum));
         case '*':
-            return multiply(firstNum, secondNum);
+            return roundToThreeDecimals(multiply(firstNum, secondNum));
         case '/':
-            return divide(firstNum, secondNum);
+            return  roundToThreeDecimals(divide(firstNum, secondNum));
     }
 }
