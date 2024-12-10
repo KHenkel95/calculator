@@ -16,7 +16,7 @@ buttonContainer.addEventListener('click', (event) => {
     switch(target.className){
         case 'digit-button':
             if(
-                lastButton === undefined || lastButton === 'ac'
+                display.textContent === '0' || lastButton === 'ac'
                 || lastButton === 'operand'
                 || display.textContent === divZeroResponse
             ){
@@ -42,7 +42,7 @@ buttonContainer.addEventListener('click', (event) => {
                 secondNum = null;
             }
             else if(display.textContent === divZeroResponse){
-                display.textContent = '';
+                display.textContent = '0';
                 break;
             }
             else{
